@@ -1,0 +1,25 @@
+{
+	"cutscenes": {
+		"intro": [
+			[0,      [
+		        ["play_music", "deliciously_sour"],
+				["player_controls", "disable"],
+				["zone_triggers", "disable"],
+				["camera_follows_player", "disable"],
+				["move_player", "0,0,30"]
+			]],
+			[1000,   [["say", "The Big Fix"]]],
+			[4000,   [["say", "by Shootfast"]]],
+			[7000,   [["say", "Controls:"]]],
+			[7000,   [["say", "A: Investigate"]]],
+			[7000,   [["say", "B: Take"]]],
+			[7000,   [["say", "Z: First person"]]],
+			[10000,   [
+				["change_scene", "office"]
+			]]
+		]
+	},
+	"triggers": {
+		"on_load": [["start_cutscene", "intro"]]
+	}
+}

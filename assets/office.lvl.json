@@ -1,0 +1,115 @@
+{
+	"cutscenes": {
+		"intro": [
+			[0,      [
+				["play_music", "trouble_makers_loopable"],
+				["set_camera", "Camera_2"],
+				["camera_target", "0.74,1.66,-2.3"],
+				["camera_near_far", "0.25", "80.0"],
+				["cinematic_mode", "enable"],
+				["player_controls", "disable"],
+				["zone_triggers", "disable"],
+				["camera_follows_player", "disable"],
+				["move_player", "0,0,-3.3"]
+			]],
+			[1000,   [["say", "It all started on Friday the 13th"]]],
+			[4000,   [["say", "When 'she' knocked on my door..."]]],
+			[8000,   [
+				["replace_character_model", "lady"],
+				["move_player", "0,0,-0.4"],
+				["rotate_player", "0,3.14,0"],
+				["set_camera", "Camera_3"],
+				["camera_target", "0.74,1.66,-2.3"],
+				["camera_near_far", "0.25", "80.0"],
+				["say", "Excuse me..."]
+			]],
+			[10000,   [
+				["say", "Can you help me sir?"]
+			]],
+			[12000,   [
+				["say", "My husband the repairman"]
+			]],
+			[13000,   [
+				["say", "has been MURDERED!"]
+			]],
+			[16000,   [
+				["say", "The police are refusing to investigate!"]
+			]],
+			[18000,   [
+				["say", "They're calling it an accident!"]
+			]],
+			[21000,   [
+				["move_player", "0,0,-3.3"],
+				["replace_character_model", "hero_nocoat"],
+				["rotate_player", "0,0,0"],
+				["set_camera", "Camera_2"],
+				["camera_target", "0.74,1.66,-2.3"],
+				["camera_near_far", "0.25", "80.0"],
+				["say", "Those lazy police are my #1 meal ticket"]
+			]],
+			[24000,   [
+				["say", "I'd be happy to get to the bottom of this"]
+			]],
+			[27000,   [
+				["replace_character_model", "lady"],
+				["move_player", "0,0,-0.4"],
+				["rotate_player", "0,3.14,0"],
+				["set_camera", "Camera_3"],
+				["camera_target", "0.74,1.66,-2.3"],
+				["camera_near_far", "0.25", "80.0"],
+				["say", "Oh thank goodness"]
+			]],
+			[29000,   [
+				["say", "My driver will take us to the crime scene"]
+			]],
+			[32000,   [
+				["say", "as soon as you're ready. I'll wait downstairs"]
+			]],
+			[34000,   [
+				["move_player", "0,0,-3.3"],
+				["replace_character_model", "hero_nocoat"],
+				["rotate_player", "0,0,0"],
+				["player_controls", "enable"],
+				["camera_follows_player", "enable"],
+				["zone_triggers", "enable"],
+				["set_camera", "Camera_0"],
+				["camera_near_far", "4.0", "80.0"],
+				["cinematic_mode", "disable"]
+			]]
+		]
+	},
+	"objects": {
+		"coatrack": {
+			"examine": [["say", "It's my coat and hat on the coat-rack"]],
+			"take": [
+				["add_to_inventory", "coat"]
+				["replace_character_model", "hero"],
+				["replace_object", "coatrack", "coatrack_empty"],
+			]
+		},
+		"coatrack_empty": {
+			"examine": [["say", "There's nothing here"]]
+		},
+		"corkboard": {
+			"examine": [["say", "It's a corkboard with details from an old case"]],
+			"take": [["say", "I don't think I can carry it"]]
+		},
+		"lamp": {
+			"examine": [["toggle_light", "lamp"]]
+		},
+		"map": {
+			"examine": [["say","It's a map of New York"]],
+			"take": [["say", "I don't want to bring it with me"]]
+		},
+		"door": {
+			"examine": [
+				["condition_check"]
+			]
+		}
+	},
+	"triggers": {
+		"zone_0": [["set_camera", "Camera_0"]],
+		"zone_1": [["set_camera", "Camera_1"]],
+		"on_load": [["start_cutscene", "intro"]]
+	}
+}
